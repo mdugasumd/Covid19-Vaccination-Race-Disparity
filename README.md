@@ -1,44 +1,20 @@
-# Economic Privilege, Neighborhood Characteristics, and Political Ideology are Associated with Racial Disparity in COVID-19 Vaccination
+# Socioeconomic Privilege and Political Ideology are Associated with Racial Disparity in COVID-19 Vaccination Methods and Materials
+
+This public repository contains the materials for reproducing the methods described in Agarwal et al. (2021) _Socioeconomic Privilege and Political Ideology Are Associated with Racial Disparity in COVID-19 Vaccination_ and additional supplementary analyses. 
+
+Materials include:
+
+1. Python code to reproduce web scraping for automated data collection of COVID-19 vaccination data where possible.
+2. Python code to merge data from the various sources cited in our Supplementary Information appendix.
+3. 
 
 
-## Abstract
+## COVID-19 Vaccination Data Sources
 
-Vaccine uptake is critical to mitigating the impact of the COVID-19 pandemic in the United States (US), but structural inequities pose a serious threat to progress on this front. Although both availability of vaccines and vaccination rates have been accelerating in recent weeks, is there disparity in who is accessing the vaccine based on race? We combine data from state and federal agencies to estimate the relationship between various social determinants of health and racial disparity in COVID-19 vaccinations at the county-level. After controlling for vaccine hesitancy, our findings indicate that economic privilege (education and income), neighborhood characteristics (information technology in the home and vehicle rate), and political ideology are significantly associated with racial disparities in COVID 19 vaccination.We further contrast how these factors relate to the uptake of the COVID-19 vaccine as compared to the influenza vaccine, and  find that while there are several common factors related to both, there are key differences reflecting the unique societal context in which the pandemic has unfolded. 
-
-## Data Collection Process
-
-The preprocessing of the raw data collected on April 19.
-
-![](_img/process.png)
-
-
-## Counties with COVID-19 Vaccination Disparity
-The counties with valid COVID-19 Vaccination Disparity (CVD).
-Totally, there are 1199 counties.
-![](_img/map.png)
-
-
-## COVID-19 Vaccination Disparity and Flu Vaccination Disparity Distribution Graph
-
-![](_img/dist.png)
-
-## COVID-19 Vaccination Disparity (CVD) and Flu Vaccination Disparity (FVD)
-
-![](_img/bar.png)
-
-
-## Scatter Matrix 
-![](_img/scatter.png)
-
-## Regression Coefficient Graph
-
-![](_img/coef.png)
-
-## Data Source
 
 ### 1. Racial COVID-19 Vaccination Data Source
 
-| State          | # of Counties | # of Valid Counties | Link                                                                                                                                                          |
+| State          | # of Counties | # of Valid Counties | Data Source                                                                                                                                                       |
 |----------------|---------------|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | California     | 54            | 43                  | https://covid19.ca.gov/vaccines/#California-vaccines-dashboard                                                                                                |
 | Illinois       | 102           | 42                  | https://www.dph.illinois.gov/covid19/vaccinedata?county=Illinois                                                                                              |
@@ -58,8 +34,18 @@ Totally, there are 1199 counties.
 | Wisconsin      | 72            | 28                  | https://www.dhs.wisconsin.gov/covid-19/vaccine-data.htm#day                                                                                                   |
 | Sum            | 1199          | 759                 |                                                                                                                                                               |
 
+_Note_. Valid counties are those that were included in our main regression analyses, following the exclusion criteria outlined below in our data preprocessing figure. 
 
 
+## Data Collection Process
+
+The preprocessing of the raw data collected on April 19.
+
+![](_img/process.png)
+
+
+## Scatter Matrix 
+![](_img/scatter.png)
 
 ### 2. Descriptive Statistics
 
