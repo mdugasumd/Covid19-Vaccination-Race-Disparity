@@ -5,7 +5,7 @@ This public repository contains the materials for reproducing the methods descri
 Materials include:
 
 1. Python code to reproduce web scraping for automated data collection of COVID-19 vaccination data where possible.
-2. Python code to merge data from the various sources cited in our Supplementary Information appendix.
+2. Python code to merge and clean data from the various sources cited in our Supplementary Information appendix.
 3. 
 
 
