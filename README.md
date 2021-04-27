@@ -2,17 +2,15 @@
 
 This public repository contains the materials for reproducing the methods described in Agarwal et al. (2021) _Socioeconomic Privilege and Political Ideology Are Associated with Racial Disparity in COVID-19 Vaccination_ and additional supplementary analyses. 
 
-Materials include:
+Materials for reproducibility include:
 
 1. Python code to reproduce web scraping for automated data collection of COVID-19 vaccination data where possible.
-2. Python code to merge and clean data from the various sources cited in our Supplementary Information appendix.
-3. 
+2. Data and python code to merge and clean data from the various sources cited in our Supplementary Information (SI) Appendix.
+3. Code to reproduce our main regression analyses (reported in main text) and robustness checks (reported in SI Appendix) as well as  additional supplementary analyses reported here. 
 
 
-## COVID-19 Vaccination Data Sources
 
-
-### 1. Racial COVID-19 Vaccination Data Source
+## Sources for COVID-19 Vaccination Data by Race
 
 | State          | # of Counties | # of Valid Counties | Data Source                                                                                                                                                       |
 |----------------|---------------|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -37,11 +35,15 @@ Materials include:
 _Note_. Valid counties are those that were included in our main regression analyses, following the exclusion criteria outlined below in our data preprocessing figure. 
 
 
-## Data Collection Process
+## Data Filtering Process
 
 The preprocessing of the raw data collected on April 19.
 
 ![](_img/process.png)
+
+
+### Missingness in Predictor Variable Data
+
 
 
 ## Scatter Matrix 
