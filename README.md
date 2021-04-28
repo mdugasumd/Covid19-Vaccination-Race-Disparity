@@ -5,12 +5,12 @@ This public repository contains the materials for reproducing the methods descri
 Materials for reproducibility include:
 
 1. [COVID-19 vaccination rate data](https://github.com/CHIDS-UMD/Covid19-Vaccination-Race-Disparity/tree/main/CountyVaccine) and Python code to reproduce the data collection, including:<br>
-    a) Explain purpose of first Python notebook and link to it ("Autonomy")
-    b) Explain purpose of second Python notebook and link to it ("Manual")
-    c) Explain purpose of third Python notebook and link to it ("Per County")
-    d) Explain purpose of fourth Python notebook and link to it ("Tableau")
+    a) Explain purpose of first Python notebook and link to it ("Autonomy") <br>
+    b) Explain purpose of second Python notebook and link to it ("Manual") <br>
+    c) Explain purpose of third Python notebook and link to it ("Per County") <br>
+    d) Explain purpose of fourth Python notebook and link to it ("Tableau") <br>
     
-2. Data and Python code to merge information from the various sources cited in our Supplementary Information (SI) Appendix.
+2. [Data](https://github.com/mdugasumd/Covid19-Vaccination-Race-Disparity/tree/main/DataMerge) and [Python code](https://github.com/mdugasumd/Covid19-Vaccination-Race-Disparity/blob/main/2.DataMerge.ipynb) to merge information from the various sources cited in our Supplementary Information (SI) Appendix.
 
 3. Python code for [cleaning the data](https://github.com/CHIDS-UMD/Covid19-Vaccination-Race-Disparity/blob/main/2.DataClean.ipynb). 
 
