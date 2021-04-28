@@ -4,9 +4,11 @@ This public repository contains the materials for reproducing the methods descri
 
 Materials for reproducibility include:
 
-1. Python code to reproduce web scraping for automated data collection of COVID-19 vaccination data where possible.
-2. Data and python code to merge and clean data from the various sources cited in our Supplementary Information (SI) Appendix.
-3. Code to reproduce our main regression analyses (reported in main text) and robustness checks (reported in SI Appendix) as well as  additional supplementary analyses reported here. 
+1. [COVID-19 vaccination rate data](https://github.com/CHIDS-UMD/Covid19-Vaccination-Race-Disparity/tree/main/CountyVaccine) and Python code to reproduce the data collection, including:<br>
+    a)
+2. Data and Python code to merge and data from the various sources cited in our Supplementary Information (SI) Appendix.
+3. Python code for cleaning the data. 
+4. Code to reproduce our main regression analyses (reported in main text) and robustness checks (reported in SI Appendix) as well as  additional supplementary analyses reported here. 
 
 
 
@@ -32,26 +34,24 @@ Materials for reproducibility include:
 | Wisconsin      | 72            | 28                  | https://www.dhs.wisconsin.gov/covid-19/vaccine-data.htm#day                                                                                                   |
 | Sum            | 1199          | 759                 |                                                                                                                                                               |
 
-_Note_. Valid counties are those that were included in our main regression analyses, following the exclusion criteria outlined below in our data preprocessing figure. 
+_Note_. Valid counties are those that were included in our main regression analyses, following the exclusion criteria outlined below in our sample construction figure. 
 
+## Missingness in Predictor Variable Data
 
-## Data Filtering Process
+**Note to add figure depicting missingness**
+
+## Sample Construction
 
 The preprocessing of the raw data collected on April 19.
 
 ![](_img/process.png)
 
 
-### Missingness in Predictor Variable Data
 
+## Descriptive Statistics and Exploratory Data Analysis
 
+We present descriptive statistics of the variables in our regression analysis. Each variable is at the county level.		
 
-## Scatter Matrix 
-![](_img/scatter.png)
-
-### 2. Descriptive Statistics
-
-We present descriptive statistics of the variables in our regression analysis. Each variable is at the county level.									
 | variable                      | description                                                                                                                                                                                                           | source                                                                                                                                                                                                                                            | count | mean   | std    | min     | 25%    | 50%    | 75%    | max     |
 |-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------|--------|--------|---------|--------|--------|--------|---------|
 | CVD                           | Covid vaccination disparity between white and black people in county i.                                                                                                                                               | Department of Health in each state                                                                                                                                                                                                                | 759   | 9.021  | 10.435 | -18.168 | 1.502  | 6.756  | 15.192 | 48.640  |
@@ -87,17 +87,17 @@ Normalized OLS Regression results.
 |---------------------------------|----------------|----------------|----------------|-----------|----------------|----------------|
 | VARIABLES                       | CVD (March 27) | CVD (April 07) | CVD (April 19) | FVD       | CVD (April 19) | CVD (April 19) |
 |                                 |                |                |                |           |                |                |
-| MedianIncome                    | -1.937**       | -2.320**       | -2.434**       | 1.145*    | -3.217***      | -2.240**       |
+| Median Income                   | -1.937**       | -2.320**       | -2.434**       | 1.145*    | -3.217***      | -2.240**       |
 |                                 | (0.866)        | (0.995)        | (1.084)        | (0.589)   | (1.054)        | (0.929)        |
-| MedianIncome_Disparity          | 0.703**        | 0.776*         | 0.984*         | 0.843**   | 0.625          | 1.109**        |
+| Median Income Disparity         | 0.703**        | 0.776*         | 0.984*         | 0.843**   | 0.625          | 1.109**        |
 |                                 | (0.287)        | (0.394)        | (0.489)        | (0.312)   | (0.486)        | (0.497)        |
-| HighSchool_Rate                 | 2.177***       | 2.639***       | 2.790***       | -0.243    | 2.891***       | 3.024***       |
+| High School Graduation Rate     | 2.177***       | 2.639***       | 2.790***       | -0.243    | 2.891***       | 3.024***       |
 |                                 | (0.510)        | (0.637)        | (0.729)        | (0.336)   | (0.638)        | (0.481)        |
-| HighSchool_Disparity            | 2.043***       | 2.562***       | 2.993***       | -0.116    | 2.861***       | 1.981***       |
+| High School Disparity           | 2.043***       | 2.562***       | 2.993***       | -0.116    | 2.861***       | 1.981***       |
 |                                 | (0.420)        | (0.435)        | (0.474)        | (0.469)   | (0.458)        | (0.515)        |
-| FacNumRate                      | 1.012*         | 1.147          | 1.451*         | -0.282    | 1.354**        | 1.304**        |
+| Health Facilities Per Capita    | 1.012*         | 1.147          | 1.451*         | -0.282    | 1.354**        | 1.304**        |
 |                                 | (0.498)        | (0.655)        | (0.760)        | (0.350)   | (0.621)        | (0.581)        |
-| CaseRate                        | 0.379          | 0.488          | 0.318          | 0.219     | 0.496          | 0.632**        |
+| COVID-19 Cases Per Capita       | 0.379          | 0.488          | 0.318          | 0.219     | 0.496          | 0.632**        |
 |                                 | (0.405)        | (0.444)        | (0.488)        | (0.330)   | (0.310)        | (0.240)        |
 | IT_Rate                         | 1.148***       | 1.266**        | 1.576***       | 0.113     | 1.610**        | 0.705          |
 |                                 | (0.370)        | (0.441)        | (0.472)        | (0.382)   | (0.558)        | (0.584)        |
