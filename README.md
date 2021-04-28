@@ -1,16 +1,22 @@
-# Socioeconomic Privilege and Political Ideology are Associated with Racial Disparity in COVID-19 Vaccination Methods and Materials
+# Socioeconomic Privilege and Political Ideology are Associated with Racial Disparity in COVID-19 Vaccination: Methods and Materials
 
 This public repository contains the materials for reproducing the methods described in Agarwal et al. (2021) _Socioeconomic Privilege and Political Ideology Are Associated with Racial Disparity in COVID-19 Vaccination_ and additional supplementary analyses. 
 
 Materials for reproducibility include:
 
 1. [COVID-19 vaccination rate data](https://github.com/CHIDS-UMD/Covid19-Vaccination-Race-Disparity/tree/main/CountyVaccine) and Python code to reproduce the data collection, including:<br>
-    a)
-2. Data and Python code to merge and data from the various sources cited in our Supplementary Information (SI) Appendix.
-3. Python code for cleaning the data. 
-4. Code to reproduce our main regression analyses (reported in main text) and robustness checks (reported in SI Appendix) as well as  additional supplementary analyses reported here. 
+    a) Explain purpose of first Python notebook and link to it ("Autonomy")
+    b) Explain purpose of second Python notebook and link to it ("Manual")
+    c) Explain purpose of third Python notebook and link to it ("Per County")
+    d) Explain purpose of fourth Python notebook and link to it ("Tableau")
+    
+2. Data and Python code to merge information from the various sources cited in our Supplementary Information (SI) Appendix.
 
+3. Python code for [cleaning the data](https://github.com/CHIDS-UMD/Covid19-Vaccination-Race-Disparity/blob/main/2.DataClean.ipynb). 
 
+4. [Code](https://github.com/CHIDS-UMD/Covid19-Vaccination-Race-Disparity/blob/main/3.StataCode.ipynb) to reproduce our main regression analyses (reported in main text) and robustness checks (reported in SI Appendix) as well as  additional supplementary analyses reported here. 
+
+Below, we also provide additional summary statistics, exploratory data analysis, and full results for the robustness checks described in the SI appendix. 
 
 ## Sources for COVID-19 Vaccination Data by Race
 
@@ -42,17 +48,20 @@ _Note_. Valid counties are those that were included in our main regression analy
 
 ## Sample Construction
 
-The preprocessing of the raw data collected on April 19.
+The filtering of the data collected for all counties on April 19.
 
 ![](_img/process.png)
 
+**Note, please change capitalization of black to Black, and also change independent variables to predictor variables**
 
 
-## Descriptive Statistics and Exploratory Data Analysis
+## Summary Statistics
 
-We present descriptive statistics of the variables in our regression analysis. Each variable is at the county level.		
+We present descriptive statistics of the variables in our regression analysis. 	
 
-| variable                      | description                                                                                                                                                                                                           | source                                                                                                                                                                                                                                            | count | mean   | std    | min     | 25%    | 50%    | 75%    | max     |
+**Note maybe add new column called 'data field' that maps how we refer to the variables in our paper to the names of the variables in the data files**
+
+| Variable                      | Description                                                                                                                                                                                                           | Source                                                                                                                                                                                                                                            | count | mean   | std    | min     | 25%    | 50%    | 75%    | max     |
 |-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------|--------|--------|---------|--------|--------|--------|---------|
 | CVD                           | Covid vaccination disparity between white and black people in county i.                                                                                                                                               | Department of Health in each state                                                                                                                                                                                                                | 759   | 9.021  | 10.435 | -18.168 | 1.502  | 6.756  | 15.192 | 48.640  |
 | FVD                           | Flu vaccination disparity between white and black people in county i.                                                                                                                                                 | CMS Mapping Medical Disparity Tool (https://data.cms.gov/mapping-medicare-disparities)                                                                                                                                                            | 759   | 15.211 | 6.449  | -12.000 | 12.000 | 16.000 | 19.000 | 37.000  |
@@ -72,16 +81,22 @@ We present descriptive statistics of the variables in our regression analysis. E
 | Vaccine Hesitancy             | COVID-19 vaccine hesitancy in county i.                                                                                                                                                                               | Department of Health and Human Services, Office of the Assistant Secretary for Planning and Evaluation (https://aspe.hhs.gov/pdf-report/vaccine-hesitancy)                                                                                        | 759   | 17.673 | 3.792  | 7.000   | 15.000 | 18.000 | 19.500 | 27.000  |
 | Proportion of Black Residents | Proportion of black residents in county i.                                                                                                                                                                            | County Population by Characteristics: 2010-2019 (https://www.census.gov/data/tables/time-series/demo/popest/2010s-counties-detail.html)                                                                                                           | 759   | 12.367 | 13.124 | 0.541   | 3.042  | 7.429  | 16.784 | 76.973  |
 | Flu Vaccination Rate          | Rate of flu vaccination in county i.                                                                                                                                                                                  | CMS Mapping Medical Disparity Tool (https://data.cms.gov/mapping-medicare-disparities)                                                                                                                                                            | 759   | 47.610 | 7.549  | 19.000  | 43.000 | 49.000 | 53.000 | 65.000  |
-| FluVax_Disparity              | Flu vaccination disparity between white and black people in county i.                                                                                                                                                 | CMS Mapping Medical Disparity Tool (https://data.cms.gov/mapping-medicare-disparities)                                                                                                                                                            | 759   | 15.211 | 6.449  | -12.000 | 12.000 | 16.000 | 19.000 | 37.000  |
-| Above75 Rate                  | Elderly population (>=75) disparity between white and black people in county i.                                                                                                                                       | County Population by Characteristics: 2010-2019 (https://www.census.gov/data/tables/time-series/demo/popest/2010s-counties-detail.html)                                                                                                           | 759   | 7.671  | 1.848  | 3.515   | 6.457  | 7.683  | 8.753  | 17.853  |
-| Above75 Disparity             | Rate of elderly population (>=75) in county i.                                                                                                                                                                        | County Population by Characteristics: 2010-2019 (https://www.census.gov/data/tables/time-series/demo/popest/2010s-counties-detail.html)                                                                                                           | 759   | 3.638  | 2.310  | -4.910  | 2.215  | 3.515  | 5.074  | 12.933  |
+| Flu Vaccination Disparity             | Flu vaccination disparity between white and black people in county i.                                                                                                                                                 | CMS Mapping Medical Disparity Tool (https://data.cms.gov/mapping-medicare-disparities)                                                                                                                                                            | 759   | 15.211 | 6.449  | -12.000 | 12.000 | 16.000 | 19.000 | 37.000  |
+| Proportion of Pop. Above Age 75                  | Elderly population (>=75) disparity between white and black people in county i.                                                                                                                                       | County Population by Characteristics: 2010-2019 (https://www.census.gov/data/tables/time-series/demo/popest/2010s-counties-detail.html)                                                                                                           | 759   | 7.671  | 1.848  | 3.515   | 6.457  | 7.683  | 8.753  | 17.853  |
+| Above Age 75 Disparity            | Rate of elderly population (>=75) in county i.                                                                                                                                                                        | County Population by Characteristics: 2010-2019 (https://www.census.gov/data/tables/time-series/demo/popest/2010s-counties-detail.html)                                                                                                           | 759   | 3.638  | 2.310  | -4.910  | 2.215  | 3.515  | 5.074  | 12.933  |
 
+
+### Scatter Matrix
+
+![](_img/scatter.png)
+
+**Note to update scatter matrix to be comprehensive (e.g., missing median income, some covariates)**
 
 ## Detailed Regression Results and Robustness Checks
 
 ### Regression Results
 
-Normalized OLS Regression results.
+Standardized OLS Regression results.
 
 |                                 | (1)            | (2)            | (3)            | (4)       | (4)            | (5)            |
 |---------------------------------|----------------|----------------|----------------|-----------|----------------|----------------|
@@ -99,31 +114,31 @@ Normalized OLS Regression results.
 |                                 | (0.498)        | (0.655)        | (0.760)        | (0.350)   | (0.621)        | (0.581)        |
 | COVID-19 Cases Per Capita       | 0.379          | 0.488          | 0.318          | 0.219     | 0.496          | 0.632**        |
 |                                 | (0.405)        | (0.444)        | (0.488)        | (0.330)   | (0.310)        | (0.240)        |
-| IT_Rate                         | 1.148***       | 1.266**        | 1.576***       | 0.113     | 1.610**        | 0.705          |
+| Home IT Rate                    | 1.148***       | 1.266**        | 1.576***       | 0.113     | 1.610**        | 0.705          |
 |                                 | (0.370)        | (0.441)        | (0.472)        | (0.382)   | (0.558)        | (0.584)        |
-| IT_Disparity                    | -0.00401       | 0.118          | 0.216          | 0.0783    | 0.0242         | 0.633          |
+| Home IT Disparity               | -0.00401       | 0.118          | 0.216          | 0.0783    | 0.0242         | 0.633          |
 |                                 | (0.539)        | (0.609)        | (0.756)        | (0.380)   | (0.700)        | (0.684)        |
-| urban                           | -0.591         | -0.285         | 0.168          | 0.182     | -0.280         | -0.445         |
+| Urban                           | -0.591         | -0.285         | 0.168          | 0.182     | -0.280         | -0.445         |
 |                                 | (0.482)        | (0.625)        | (0.789)        | (0.651)   | (0.730)        | (0.598)        |
-| vehicle                         | 2.358**        | 2.962***       | 3.012**        | -0.119    | 2.551**        | 1.443          |
+| Vehicle Ownership Rate          | 2.358**        | 2.962***       | 3.012**        | -0.119    | 2.551**        | 1.443          |
 |                                 | (0.836)        | (0.967)        | (1.227)        | (0.654)   | (1.101)        | (1.084)        |
-| republican_rate                 | -2.053***      | -2.601***      | -3.095***      | -1.764*** | -2.678***      | -2.216***      |
+| Political Ideology              | -2.053***      | -2.601***      | -3.095***      | -1.764*** | -2.678***      | -2.216***      |
 |                                 | (0.597)        | (0.658)        | (0.722)        | (0.410)   | (0.538)        | (0.478)        |
 | Segregation                     | 0.264          | 0.531          | 0.599          | 0.813***  | 0.370          | 0.521          |
 |                                 | (0.511)        | (0.594)        | (0.715)        | (0.257)   | (0.682)        | (0.751)        |
-| racial_weighted_bias            | 1.169**        | 1.145*         | 1.144          | 0.331     | 0.980*         | 0.429          |
+| Racial Bias                     | 1.169**        | 1.145*         | 1.144          | 0.331     | 0.980*         | 0.429          |
 |                                 | (0.509)        | (0.606)        | (0.705)        | (0.390)   | (0.524)        | (0.401)        |
-| hesitancy                       | 1.231          | 1.290          | 1.335          | -0.388    | 1.754          | 0.790          |
+| Vaccine Hesitancy               | 1.231          | 1.290          | 1.335          | -0.388    | 1.754          | 0.790          |
 |                                 | (1.380)        | (1.630)        | (1.776)        | (0.679)   | (1.599)        | (1.358)        |
-| Black_Prop                      | -1.672         | -1.798         | -2.072         | 0.0393    | -1.820         | -1.338         |
+| Proportion of Black Pop.        | -1.672         | -1.798         | -2.072         | 0.0393    | -1.820         | -1.338         |
 |                                 | (1.043)        | (1.226)        | (1.290)        | (0.551)   | (1.092)        | (0.909)        |
-| FluVax_Rate                     |                |                |                |           | 1.686**        | 0.839          |
+| Flu Vaccination Rate            |                |                |                |           | 1.686**        | 0.839          |
 |                                 |                |                |                |           | (0.621)        | (0.513)        |
-| FluVax_Disparity                |                |                |                |           | 1.351***       | 0.944*         |
+| Flu Vaccination Disparity       |                |                |                |           | 1.351***       | 0.944*         |
 |                                 |                |                |                |           | (0.443)        | (0.485)        |
-| Above75_Rate                    |                |                |                |           |                | -1.751**       |
+| Proportion of Pop. Above Age 75 |                |                |                |           |                | -1.751**       |
 |                                 |                |                |                |           |                | (0.674)        |
-| Above75_Disparity               |                |                |                |           |                | 3.281***       |
+| Above Age 75 Disparity          |                |                |                |           |                | 3.281***       |
 |                                 |                |                |                |           |                | (0.493)        |
 | Constant                        | 7.764***       | 7.475***       | 8.025***       | 12.95***  | 9.218***       | 9.849***       |
 |                                 | (1.685)        | (1.022)        | (1.125)        | (0.803)   | (0.957)        | (0.912)        |
