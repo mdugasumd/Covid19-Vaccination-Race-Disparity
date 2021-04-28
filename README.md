@@ -96,7 +96,9 @@ We present descriptive statistics of the variables in our regression analysis.
 
 ### Regression Results
 
-Standardized OLS Regression results.
+OLS regression results for robustness checks (Models 1, 2, 4, and 5) are presented below along with results from the main text (Models 3 and 4) with all continuous variables standardized for ease of interpretation. 
+
+**Note --please use the star system consistent with what we report in the manuscript: We use * to denote p < .05, and ** for p < .01)**
 
 |                                 | (1)            | (2)            | (3)            | (4)       | (4)            | (5)            |
 |---------------------------------|----------------|----------------|----------------|-----------|----------------|----------------|
